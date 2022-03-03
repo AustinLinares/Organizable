@@ -10,7 +10,7 @@
 }
 
 .window {
-  width: 100%;
+  width: auto;
   /* height: 100vh; */
   background-color: #e5e5e5;
 }
@@ -68,7 +68,7 @@
 
 .biggest-container {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 1fr;
 }
 
 .aside {
@@ -76,6 +76,7 @@
   grid-template-rows: 48px 1fr 64px;
   width: 240px;
   height: 100vh;
+  position: fixed;
 }
 
 .aside-header {

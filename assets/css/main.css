@@ -27,6 +27,16 @@
 
 .home-container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 32px;
+  margin-left: 240px;
+  min-height: 100vh;
+}
+
+.board-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
 }
