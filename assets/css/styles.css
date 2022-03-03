@@ -42,12 +42,22 @@
 }
 
 .submit {
-  background-color: #757575;
   color: white;
   border-radius: 6px;
   height: 36px;
   border: none;
   letter-spacing: 1.25px;
+}
+
+.delete-acc {
+  margin-top: -16px;
+  width: 480px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.25px;
+  text-decoration: none;
 }
 
 .anchor {
@@ -79,12 +89,19 @@
   gap: 11px;
 }
 
-.svg {
-  width: 18px;
-  height: 16px;
-}
-
 .aside-footer {
   border-top: 1px solid #e76a94;
   height: 64px;
+}
+
+.profile-heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 32px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
 }

@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-.horizontal-center {
+.h-c {
   justify-content: center;
 }
 
@@ -14,4 +14,17 @@
 .aside-active {
   background-color: #feebf1;
   border-left: 4px solid #d44a78;
+}
+
+.bc-pink {
+  background-color: #f490b1;
+}
+
+.bc-gray {
+  background-color: #757575;
+}
+
+.svg {
+  width: 18px;
+  height: 16px;
 }

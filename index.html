@@ -15,7 +15,7 @@
           <img src="./assets/icons/organizable.svg" alt="logo">
         </header>
         <section class="aside-content ">
-          <div class="aside-div aside-active pd-h">
+          <div class="aside-div pd-h">
             <img class="svg" src="./assets/icons/logout-icon.svg" alt="logo">
             <p>My Boards</p>
           </div>
@@ -23,7 +23,7 @@
             <img class="svg" src="./assets/icons/closed-boards-icon.svg" alt="logo">
             <p> Closed Boards</p>
           </div>
-          <div class="aside-div pd-h">
+          <div class="aside-div pd-h aside-active">
             <img class="svg" src="./assets/icons/profile-icon.svg" alt="logo">
             <p>My Profile</p>
           </div>
@@ -34,7 +34,7 @@
         </footer>
       </aside>
       <main class="window main-container">
-        <h2 class="heading">Create Account</h2>
+        <h1 class="heading profile-heading">My Profile</h1>
         <form class="login-form">
           <label class="label" for="username">USERNAME</label>
           <input class="input" id="username" placeholder="placeholder" type="text">
@@ -44,11 +44,9 @@
           <input class="input" id="fname" placeholder="placeholder" type="password">
           <label class="label" for="lname">LAST NAME</label>
           <input class="input" id="lname" placeholder="placeholder" type="password">
-          <label class="label" for="password">PASSWORD</label>
-          <input class="input" id="password" placeholder="placeholder" type="password">
-          <button class="submit" type="submit">CREATE ACCOUNT</button>
+          <button class="submit bc-pink" type="submit">UPDATE PROFILE</button>
         </form>
-        <a class="anchor" href="#">Login</a>
+        <a class="delete-acc submit bc-gray vertical-center h-c" href="#">DELETE MY ACCOUNT</a>
       </main>
     </section>
   </div>

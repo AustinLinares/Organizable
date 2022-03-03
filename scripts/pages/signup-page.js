@@ -12,7 +12,7 @@
   <input class="input" id="lname" placeholder="placeholder" type="password">
   <label class="label" for="password">PASSWORD</label>
   <input class="input" id="password" placeholder="placeholder" type="password">
-  <button class="submit" type="submit">CREATE ACCOUNT</button>
+  <button class="submit bc-gray" type="submit">CREATE ACCOUNT</button>
 </form>
 <a class="anchor" href="#">Login</a>
 </section>`

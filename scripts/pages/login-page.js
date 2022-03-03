@@ -6,7 +6,7 @@
   <input class="input" id="username" placeholder="placeholder" type="text">
   <label class="label" for="password">PASSWORD</label>
   <input class="input" id="password" placeholder="placeholder" type="password">
-  <button class="submit" type="submit">LOGIN</button>
+  <button class="submit bc-gray" type="submit">LOGIN</button>
 </form>
 <a class="anchor" href="#">Create Account</a>
 </section>`
