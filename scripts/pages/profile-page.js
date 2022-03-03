@@ -1,4 +1,4 @@
-`    <section class="biggest-container">
+`        <section class="biggest-container">
 <aside class="aside">
   <header class="aside-header vertical-center pd-h">
     <img src="./assets/icons/organizable.svg" alt="logo">
@@ -22,7 +22,7 @@
     <a class="anchor" href="#">Log out</a>
   </footer>
 </aside>
-<main class="window main-container pt-3">
+<main class="window home-container main-padding">
   <h1 class="heading profile-heading">My Profile</h1>
   <form class="login-form">
     <label class="label" for="username">USERNAME</label>
