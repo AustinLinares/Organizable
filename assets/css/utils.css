@@ -1,0 +1,17 @@
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-center {
+  justify-content: center;
+}
+
+.pd-h {
+  padding: 0 16px;
+}
+
+.aside-active {
+  background-color: #feebf1;
+  border-left: 4px solid #d44a78;
+}
