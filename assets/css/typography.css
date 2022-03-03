@@ -1,0 +1,12 @@
+.heading {
+  font-family: Montserrat;
+}
+
+.label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
