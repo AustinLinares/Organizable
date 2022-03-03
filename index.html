@@ -19,11 +19,11 @@
             <img class="svg" src="./assets/icons/logout-icon.svg" alt="logo">
             <p>My Boards</p>
           </div>
-          <div class="aside-div pd-h aside-active">
+          <div class="aside-div pd-h">
             <img class="svg" src="./assets/icons/closed-boards-icon.svg" alt="logo">
             <p> Closed Boards</p>
           </div>
-          <div class="aside-div pd-h">
+          <div class="aside-div pd-h aside-active">
             <img class="svg" src="./assets/icons/profile-icon.svg" alt="logo">
             <p>My Profile</p>
           </div>
@@ -33,66 +33,20 @@
           <a class="anchor" href="#">Log out</a>
         </footer>
       </aside>
-      <main class="window home-container main-padding">
-        <h1 class="heading profile-heading">Closed Boards</h1>
-        <section class="board-container">
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-        </section>
+      <main class="window main-container pt-3">
+        <h1 class="heading profile-heading">My Profile</h1>
+        <form class="login-form">
+          <label class="label" for="username">USERNAME</label>
+          <input class="input" id="username" placeholder="placeholder" type="text">
+          <label class="label" for="email">EMAIL</label>
+          <input class="input" id="email" placeholder="placeholder" type="password">
+          <label class="label" for="fname">FIRST NAME</label>
+          <input class="input" id="fname" placeholder="placeholder" type="password">
+          <label class="label" for="lname">LAST NAME</label>
+          <input class="input" id="lname" placeholder="placeholder" type="password">
+          <button class="submit bc-pink" type="submit">UPDATE PROFILE</button>
+        </form>
+        <a class="delete-acc submit bc-gray vertical-center h-c" href="#">DELETE MY ACCOUNT</a>
       </main>
       </section>
   </div>
