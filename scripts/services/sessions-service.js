@@ -1,22 +1,25 @@
 import { tokenKey } from "../config.js";
 import apiFetch from "./api-fetch.js";
 
-export async function login(credentials = { email, password }) {
+export async function login(credentials = { username, password }) {
   const { token, ...user } = await apiFetch("login", { body: credentials });
   sessionStorage.setItem(tokenKey, token);
   return user;
 }
 
 export async function logout() {
-  await apiFetch("logout", { method: "DELETE" });
+  await apiFetch("logout", { method: "POST" });
   sessionStorage.removeItem(tokenKey);
   // localStorage.removeItem("contacts");
   // localStorage.removeItem("favorites");
   // localStorage.removeItem("STORE");
 }
 
-// test
+// test login
 // const user = login({
-// 	email: "team4-austin@mail.com",
+// 	username: "user24",
 // 	password: "123456"
-// })//.then(logout);
+// }).then(console.log)//.then(logout);
+
+// test logout
+// logout();
