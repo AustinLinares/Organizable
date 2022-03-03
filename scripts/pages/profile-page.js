@@ -37,4 +37,4 @@
   </form>
   <a class="delete-acc submit bc-gray vertical-center h-c" href="#">DELETE MY ACCOUNT</a>
 </main>
-</section>>`
+</section>`

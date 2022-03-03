@@ -16,19 +16,57 @@
   border-left: 4px solid #d44a78;
 }
 
-.bc-pink {
-  background-color: #f490b1;
+/* backgrounds colors */
+.pink-bc {
+  background-color: #fabbd0;
 }
 
-.bc-gray {
-  background-color: #757575;
+.blue-bc {
+  background-color: #60b5e5;
 }
+
+.celeste-bc {
+  background-color: #9de0f9;
+}
+
+.gray-bc {
+  background-color: #bdbdbd;
+}
+
+.purple-bc {
+  background-color: #c499ec;
+}
+
+.red-bc {
+  background-color: #f77474;
+}
+
+.gren-bc {
+  background-color: #42d781;
+}
+
+.orange-bc {
+  background-color: #ffa759;
+}
+
+.limon-bc {
+  background-color: #90dbaf;
+}
+/*  */
 
 .svg {
   width: 18px;
   height: 16px;
 }
 
-.pt-3 {
-  padding-top: 3rem;
+.main-padding {
+  padding: 3rem 2rem;
+}
+
+.bc-pink {
+  background-color: #f490b1;
+}
+
+.bc-gray {
+  background-color: #757575;
 }
