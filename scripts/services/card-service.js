@@ -1,78 +1,68 @@
 import apiFetch from "./api-fetch.js";
 import { login } from "./sessions-service.js";
 
-export async function getBoards() {
+export async function createCard( idList, newCard = { name }) {
+  return await apiFetch("lists/" + idList + "/cards", {body: newCard });
+};
+
+export async function showCard(idList, idCard) {
+  return await apiFetch("lists/" + idList + "/cards/" + idCard);
+};
+
+export async function editCard(idList, idCard, newCard = { name, list_id, pos }) {
+  return await apiFetch("lists/" + idList + "/cards/" + idCard, {method: "PATCH", body: newCard});
+};
+
+export async function deleteCard(idList, idCard) {
+  return await apiFetch("lists/" + idList + "/cards/" + idCard, {method: "DELETE"});
+};
+
+export async function sortCards() {
   return await apiFetch("boards");
 };
 
-export async function showBoard(id) {
-  return await apiFetch("boards/" + id);
-};
-
-export async function createBoard( newBoard = { name, color }) {
-  return await apiFetch("boards", {body: newBoard });
-};
-
-export async function deleteBoard(id) {
-  return await apiFetch("boards/" + id, {method: "DELETE" });
-};
-
-
-export async function editBoard(id, newContact = { name, color, starred, closed }) {
-  return await apiFetch("boards/" + id, {method: "PATCH", body: newContact});
-};
-
-// // test getBoards
-// const user = login({
-// 	username: "user24",
-// 	password: "123456"
-// }).then(getBoards).then(console.log)//.then(logout);
-
-// test createBoard
-// async function testCreateBoard() {
+// test createCard
+// async function testCreateCard() {
 //   const user = await login({
 //     username: "user24",
 //     password: "123456"
 //   })
-//   createBoard({
-//     name: "created from test",
-//     color: "red",
+//   createCard(128, {
+//     name: "created from vscode",
 //   }).then(console.log)
 // }
-// testCreateBoard();
-
-// test createBoard
-// async function testDeleteBoard() {
-//   const user = await login({
-//     username: "user24",
-//     password: "123456"
-//   })
-//   deleteBoard(385).then(console.log)
-// }
-// testDeleteBoard();
+// testCreateCard();
 
 // test updateBoard
-// async function testUpdateBoard() {
+// async function testUpdateCard() {
 //   const user = await login({
 //     username: "user24",
 //     password: "123456"
 //   })
-//   editBoard(383, {
-//     name: "created from test2",
-//     color: "red",
-//     starred: true,
+//   editCard(128, 323, {
+//     name: "edited from vscode",
 //   }).then(console.log)
 // }
-// testUpdateBoard();
+// testUpdateCard();
 
-// test updateBoard
-// async function testGetBoard() {
+// test showCard
+// async function testShowCard() {
 //   const user = await login({
 //     username: "user24",
 //     password: "123456"
 //   })
-//   showBoard(383).then(console.log)
+//   showCard(128, 323).then(console.log)
 // }
-// testGetBoard();
+// testShowCard();
+
+// test deleteCard
+async function testDeleteCard() {
+  const user = await login({
+    username: "user24",
+    password: "123456"
+  })
+  deleteCard(128, 322).then(console.log)
+}
+testDeleteCard();
 
 
