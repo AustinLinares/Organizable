@@ -42,16 +42,17 @@ export async function updateUser(
 // }).then(console.log);
 
 // test updateUser
-// login({
-// 	username: "poke4",
-// 	password: "123456"
-// }).then(updateUser({
+// async function testUpdateUser() {
+//   const user = await login({
+//     username: "user24",
+//     password: "123456"
+//   })
+//   updateUser({
 //   username: "poke4",
 //   email: "pokemon123@mail.com",
 //   first_name: "poke",
 //   last_name: "mon",
 //   password: "123456",
-// })).then(console.log);
-
-
-
+// }).then(console.log)
+// }
+// testUpdateUser();

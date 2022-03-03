@@ -74,3 +74,5 @@ export async function editBoard(id, newContact = { name, color, starred, closed 
 //   showBoard(383).then(console.log)
 // }
 // testGetBoard();
+
+
