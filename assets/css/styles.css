@@ -50,6 +50,11 @@
   letter-spacing: 1.25px;
 }
 
+.submit:hover,
+.delete-acc:hover {
+  cursor: pointer;
+}
+
 .delete-acc {
   margin-top: -16px;
   width: 480px;
