@@ -56,13 +56,13 @@ export async function sortCards() {
 // testShowCard();
 
 // test deleteCard
-async function testDeleteCard() {
-  const user = await login({
-    username: "user24",
-    password: "123456"
-  })
-  deleteCard(128, 322).then(console.log)
-}
-testDeleteCard();
+// async function testDeleteCard() {
+//   const user = await login({
+//     username: "user24",
+//     password: "123456"
+//   })
+//   deleteCard(128, 322).then(console.log)
+// }
+// testDeleteCard();
 
 
