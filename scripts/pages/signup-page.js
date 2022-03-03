@@ -1,4 +1,4 @@
-`<section class="window main-container">
+`<section class="window main-container h-c">
 <img src="./assets/icons/organizable.svg" alt="logo">
 <h2 class="heading">Create Account</h2>
 <form class="login-form">
