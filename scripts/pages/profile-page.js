@@ -1,3 +1,6 @@
+import DOMHandler from "../dom-handler.js";
+import ClosedPage from "./closed-boards-page.js";
+import HomePage from "./home-page.js";
 
 function render() {
   // const { loginError } = LoginPage.state;
@@ -8,15 +11,15 @@ function render() {
     <img src="./assets/icons/organizable.svg" alt="logo">
   </header>
   <section class="aside-content ">
-    <div class="aside-div pd-h">
+    <div class="aside-div pd-h" id="myboards-div">
       <img class="svg" src="./assets/icons/logout-icon.svg" alt="logo">
       <p>My Boards</p>
     </div>
-    <div class="aside-div pd-h">
+    <div class="aside-div pd-h" id="closedboards-div">
       <img class="svg" src="./assets/icons/closed-boards-icon.svg" alt="logo">
       <p> Closed Boards</p>
     </div>
-    <div class="aside-div pd-h aside-active">
+    <div class="aside-div pd-h aside-active" id="myprofile-div">
       <img class="svg" src="./assets/icons/profile-icon.svg" alt="logo">
       <p>My Profile</p>
     </div>
@@ -46,11 +49,23 @@ function render() {
 </section>`;
 }
 
+function asideListeners() {
+  const boardsDiv = document.querySelector("#myboards-div");
+  const closedDiv = document.querySelector("#closedboards-div");
+  boardsDiv.addEventListener("click", ()=>{
+    DOMHandler.load(HomePage);
+  })
+  closedDiv.addEventListener("click", ()=>{
+    DOMHandler.load(ClosedPage);
+  })
+}
+
 const ProfilePage = {
   toString() {
     return render();
   },
   addListeners() {
+    asideListeners();
   },
   // state: {
   //   loginError: null,
