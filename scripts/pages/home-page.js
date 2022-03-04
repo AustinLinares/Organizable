@@ -41,6 +41,9 @@ function render() {
   ${StarredBoard}
   <h2 class="heading heading-sm">Boards</h2>
   ${RegularBoard}
+  <article class="board border-s vertical-center h-c">
+    <p class="vertical-center">Create Bord</p>
+  </article>
 </main>
 </section>`;
 }
