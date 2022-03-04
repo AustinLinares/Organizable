@@ -1,6 +1,8 @@
 import DOMHandler from "../dom-handler.js";
 import { logout } from "../services/sessions-service.js";
+import ClosedPage from "./closed-boards-page.js";
 import LoginPage from "./login-page.js";
+import ProfilePage from "./profile-page.js";
 
 function render() {
   // const { loginError } = LoginPage.state;
@@ -71,11 +73,11 @@ function logoutListener() {
 function asideListeners() {
   const closedDiv = document.querySelector("#closedboards-div");
   const profileDiv = document.querySelector("#myprofile-div");
-  closedDiv.addEventListener("click", async ()=>{
-    // DOMHandler.load(ClosedPage);
+  closedDiv.addEventListener("click", ()=>{
+    DOMHandler.load(ClosedPage);
   })
-  profileDiv.addEventListener("click", async ()=>{
-    // DOMHandler.load(ProfilePage);
+  profileDiv.addEventListener("click", ()=>{
+    DOMHandler.load(ProfilePage);
   })
 }
 
@@ -85,6 +87,7 @@ const HomePage = {
   },
   addListeners() {
     logoutListener();
+    asideListeners();
   },
   // state: {
   //   loginError: null,
