@@ -40,7 +40,7 @@ function starListener() {
       e.preventDefault();
       let idToStar = e.target.closest("article").dataset.id;
       await editBoard(idToStar, { starred: true });
-      STORE.fetchBoards();
+      await STORE.fetchBoards();
       DOMHandler.reload();
     })
   })
