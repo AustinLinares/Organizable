@@ -9,9 +9,12 @@ async function fetchBoards() {
   this.closed = boards.filter(
     (board) => board.closed
   );
-  this.starred = boards.filter(
+  this.regular = boards.filter(
     (board) => !(board.starred) && !(board.closed)
   );
+  localStorage.setItem("starred", JSON.stringify(this.starred));
+  localStorage.setItem("closed", JSON.stringify(this.closed));
+  localStorage.setItem("regular", JSON.stringify(this.regular));
 }
 
 // function currentCategories() {
@@ -32,9 +35,9 @@ const STORE = {
   regular: [],
   closed: [],
   currentTab: "expense",
-  fetchCategories,
-  currentCategories,
-  deleteCategory,
+  fetchBoards,
+  // currentCategories,
+  // deleteCategory,
 };
 
 export default STORE;
