@@ -1,7 +1,6 @@
 import STORE from "../store.js";
 
 function renderRegularBoard(regularBoard) {
-  console.log(regularBoard);
   return `
   <article class="board ${regularBoard.color}" data-id="${regularBoard.id}" data-color="${regularBoard.color}">
     <p>${regularBoard.name}</p>

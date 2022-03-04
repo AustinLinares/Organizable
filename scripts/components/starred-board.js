@@ -1,7 +1,6 @@
 import STORE from "../store.js";
 
 function renderStarredBoard(starredBoard) {
-  console.log(starredBoard);
   return `
   <article class="board ${starredBoard.color}" data-id="${starredBoard.id}" data-color="${starredBoard.color}">
     <p>${starredBoard.name}</p>

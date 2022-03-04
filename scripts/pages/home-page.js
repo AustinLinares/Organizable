@@ -75,8 +75,6 @@ function trashListener() {
     anchor.addEventListener("click", async (e) => {
       e.preventDefault();
       let idToDelete = e.target.closest("article").dataset.id;
-      console.log(idToDelete);
-      console.log(e.target.closest("article"));
       await editBoard(idToDelete, { closed: true, starred: false });
       await STORE.fetchBoards();
       DOMHandler.reload();
