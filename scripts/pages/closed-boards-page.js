@@ -1,5 +1,7 @@
 import DOMHandler from "../dom-handler.js";
+import { logout } from "../services/sessions-service.js";
 import HomePage from "./home-page.js";
+import LoginPage from "./login-page.js";
 import ProfilePage from "./profile-page.js";
 
 function render() {
@@ -25,8 +27,8 @@ function render() {
           </div>
         </section>
         <footer class="aside-footer pd-h vertical-center">
-          <img class="svg" src="./assets/icons/logout-icon.svg" alt="logo">
-          <a class="anchor" href="#">Log out</a>
+          <img class="svg" id="logout-img" src="./assets/icons/logout-icon.svg" alt="logo">
+          <a class="anchor" id="logout-anchor" href="#">Log out</a>
         </footer>
       </aside>
       <main class="window home-container main-padding">
@@ -93,13 +95,27 @@ function render() {
       </section>`;
 }
 
+function logoutListener() {
+  const logoutImg = document.querySelector("#logout-img");
+  const logoutAnchor = document.querySelector("#logout-anchor");
+  logoutImg.addEventListener("click", async ()=>{
+    await logout();
+    DOMHandler.load(LoginPage);
+  })
+  logoutAnchor.addEventListener("click", async (e)=>{
+    // e.preventDefault();
+    await logout();
+    DOMHandler.load(LoginPage);
+  })
+}
+
 function asideListeners() {
   const boardsDiv = document.querySelector("#myboards-div");
   const profileDiv = document.querySelector("#myprofile-div");
   boardsDiv.addEventListener("click", ()=>{
     DOMHandler.load(HomePage);
   })
-  profileDiv.addEventListener("click", ()=>{
+  profileDiv.addEventListener("click", (e)=>{
     DOMHandler.load(ProfilePage);
   })
 }
@@ -110,6 +126,7 @@ const ClosedPage = {
   },
   addListeners() {
     asideListeners();
+    logoutListener();
   },
   // state: {
   //   loginError: null,
