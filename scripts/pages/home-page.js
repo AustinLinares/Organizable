@@ -90,6 +90,7 @@ const HomePage = {
     logoutListener();
     asideListeners();
     trashListener();
+    RegularBoard.addListeners();
   },
   // state: {
   //   loginError: null,
