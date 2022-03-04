@@ -26,9 +26,9 @@ function render() {
   `;
 }
 
-function createBoardListener() {
+function openCreateBoardListener() {
   const boardCreater = document.querySelector(".board-creater");
-  const formContainer = document.querySelector("#creationFormContainer");
+  const formContainer = document.querySelector(".hide-container");
   boardCreater.addEventListener("click", () => {
     formContainer.classList.remove("ds-none");
   })
@@ -53,7 +53,7 @@ const RegularBoard = {
   },
   addListeners() {
     starListener();
-    createBoardListener();
+    openCreateBoardListener();
   },
 };
 

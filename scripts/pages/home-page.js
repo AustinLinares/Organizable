@@ -41,26 +41,28 @@ function render() {
   ${StarredBoard}
   <h2 class="heading heading-sm">Boards</h2>
   ${RegularBoard}
-  <div id="creationFormContainer" class="creation-container ds-none">
-    <form id="formToCC" class="board lime" data-color="">
-      <input class="special-input" id="toCreateBoards" placeholder="Board name" type="text">
-      <div class="board-footer">
-        <button class="special-button">CREATE</button>
-      </div>
-    </form>
-    <section id="palette" class="palette">
-      <div class="color-p lime"></div>
-      <div class="color-p red"></div>
-      <div class="color-p blue"></div>
-      <div class="color-p orange"></div>
-      <div class="color-p purple"></div>
-      <div class="color-p pink"></div>
-      <div class="color-p green"></div>
-      <div class="color-p grey"></div>
-      <div class="color-p sky"></div>
-    </section>
-  </div>
 </main>
+<div class="hide-container ds-none">
+    <div id="creationFormContainer" class="creation-container">
+      <form id="formToCC" class="board lime" data-color="">
+        <input class="special-input" id="toCreateBoards" placeholder="Board name" type="text">
+        <div class="board-footer">
+          <button class="special-button">CREATE</button>
+        </div>
+      </form>
+      <section id="palette" class="palette">
+        <div class="color-p lime"></div>
+        <div class="color-p red"></div>
+        <div class="color-p blue"></div>
+        <div class="color-p orange"></div>
+        <div class="color-p purple"></div>
+        <div class="color-p pink"></div>
+        <div class="color-p green"></div>
+        <div class="color-p grey"></div>
+        <div class="color-p sky"></div>
+      </section>
+    </div>
+  </div>
 </section>`;
 }
 
