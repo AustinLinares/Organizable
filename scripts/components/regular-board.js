@@ -26,13 +26,6 @@ function render() {
   `;
 }
 
-function createBoardListener() {
-  const boardCreater = document.querySelector(".board-creater");
-  boardCreater.addEventListener("click", () => {
-    console.log("created");
-  })
-}
-
 function starListener() {
   let stars = document.querySelectorAll(".star-desactive");
   stars.forEach((star) => {
@@ -51,7 +44,6 @@ const RegularBoard = {
     return render();
   },
   addListeners() {
-    createBoardListener();
     starListener();
   },
 };

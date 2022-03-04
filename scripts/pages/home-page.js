@@ -41,12 +41,15 @@ function render() {
   ${StarredBoard}
   <h2 class="heading heading-sm">Boards</h2>
   ${RegularBoard}
-  <form class="board lime" data-color="">
-    <input class="special-input" id="toCreateBoards" placeholder="Board name" type="text">
-    <div class="board-footer">
-      <button class="special-button">CREATE</button>
-    </div>
-  </form>
+  <div id="creationFormContainer" class="ds-none">
+    <form class="board lime" data-color="">
+      <input class="special-input" id="toCreateBoards" placeholder="Board name" type="text">
+      <div class="board-footer">
+        <button class="special-button">CREATE</button>
+      </div>
+    </form>
+  </div>
+  
 </main>
 </section>`;
 }
@@ -88,6 +91,14 @@ function trashListener() {
   });
 }
 
+function createBoardListener() {
+  const boardCreater = document.querySelector(".board-creater");
+  const formContainer = document.querySelector("#creationFormContainer");
+  boardCreater.addEventListener("click", () => {
+    formContainer.classList.remove("ds-none");
+  })
+}
+
 const HomePage = {
   toString() {
     return render();
@@ -96,6 +107,7 @@ const HomePage = {
     logoutListener();
     asideListeners();
     trashListener();
+    createBoardListener();
     RegularBoard.addListeners();
     StarredBoard.addListeners();
   },

@@ -125,3 +125,7 @@
   width: 73px;
   height: 28px;
 }
+
+.ds-none {
+  display: none;
+}
