@@ -91,6 +91,7 @@ const HomePage = {
     asideListeners();
     trashListener();
     RegularBoard.addListeners();
+    StarredBoard.addListeners();
   },
   // state: {
   //   loginError: null,
