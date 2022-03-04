@@ -35,7 +35,7 @@ function render() {
   <h1 class="heading profile-heading">My Boards</h1>
   <h2 class="heading heading-sm">Starred Boards</h2>
   <section class="board-container">
-    <article class="board limon-bc">
+    <article class="board lime">
       <p>Board 1</p>
       <div class="board-footer">
         <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
@@ -45,7 +45,7 @@ function render() {
   </section>
   <h2 class="heading heading-sm">Boards</h2>
   <section class="board-container">
-    <article class="board limon-bc">
+    <article class="board lime">
       <p>Board 1</p>
       <div class="board-footer">
         <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>

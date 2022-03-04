@@ -1,3 +1,4 @@
+import BoardsClosed from "../components/closed-board.js";
 import DOMHandler from "../dom-handler.js";
 import { logout } from "../services/sessions-service.js";
 import HomePage from "./home-page.js";
@@ -33,64 +34,7 @@ function render() {
       </aside>
       <main class="window home-container main-padding">
         <h1 class="heading profile-heading">Closed Boards</h1>
-        <section class="board-container">
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-          <article class="board limon-bc">
-            <p>Board 1</p>
-            <div class="board-footer">
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-              <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-            </div>
-          </article>
-        </section>
+        ${BoardsClosed}
       </main>
       </section>`;
 }
