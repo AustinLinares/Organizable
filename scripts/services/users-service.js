@@ -17,12 +17,13 @@ export async function createUser(
 }
 
 export async function updateUser(
-  data = { username, email, first_name, last_name, password }
+  data = { username, email, first_name, last_name }
 ) {
   const { token, ...user } = await apiFetch(`users/${JSON.parse(localStorage.getItem("user")).id}`, {
     body: data,
     method: "PATCH",
   });
+  localStorage.setItem("user", JSON.stringify(user));
   return user;
 }
 
@@ -52,7 +53,6 @@ export async function updateUser(
 //   email: "pokemon123@mail.com",
 //   first_name: "poke",
 //   last_name: "mon",
-//   password: "123456",
 // }).then(console.log)
 // }
 // testUpdateUser();
