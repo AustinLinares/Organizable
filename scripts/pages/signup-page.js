@@ -2,6 +2,7 @@ import DOMHandler from "../dom-handler.js";
 import LoginPage from "./login-page.js";
 import { createUser } from "../services/users-service.js";
 import STORE from "../store.js";
+import HomePage from "./home-page.js";
 
 function render() {
   // const { loginError } = LoginPage.state;
@@ -42,7 +43,7 @@ function signupListener() {
     const user = await createUser(credentials)
     STORE.user = user;
     await STORE.fetchBoards();
-    // DOMHandler.load(HomePage);
+    DOMHandler.load(HomePage);
   })
 }
 

@@ -1,6 +1,7 @@
 import DOMHandler from "../dom-handler.js";
 import { login } from "../services/sessions-service.js";
 import STORE from "../store.js";
+import HomePage from "./home-page.js";
 import SignupPage from "./signup-page.js";
 
 function render() {
@@ -32,7 +33,7 @@ function loginListener() {
     const user = await login(credentials);
     STORE.user = user;
     await STORE.fetchBoards();
-    // DOMHandler.load(HomePage);
+    DOMHandler.load(HomePage);
   })
 }
 

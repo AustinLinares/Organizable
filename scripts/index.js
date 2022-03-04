@@ -1,5 +1,6 @@
 import { tokenKey } from "./config.js";
 import DOMHandler from "./dom-handler.js";
+import HomePage from "./pages/home-page.js";
 import LoginPage from "./pages/login-page.js";
 
 async function init() {

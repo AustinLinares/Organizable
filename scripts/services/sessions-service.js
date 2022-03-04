@@ -12,9 +12,7 @@ export async function login(credentials = { username, password }) {
 export async function logout() {
   await apiFetch("logout", { method: "POST" });
   sessionStorage.removeItem(tokenKey);
-  localStorage.removeItem("user");
-  // localStorage.removeItem("favorites");
-  // localStorage.removeItem("STORE");
+  localStorage.clear();
 }
 
 // test login
