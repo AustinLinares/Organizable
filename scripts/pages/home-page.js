@@ -1,7 +1,9 @@
 import RegularBoard from "../components/regular-board.js";
 import StarredBoard from "../components/starred-board.js";
 import DOMHandler from "../dom-handler.js";
+import { editBoard } from "../services/board-service.js";
 import { logout } from "../services/sessions-service.js";
+import STORE from "../store.js";
 import ClosedPage from "./closed-boards-page.js";
 import LoginPage from "./login-page.js";
 import ProfilePage from "./profile-page.js";
@@ -67,6 +69,21 @@ function asideListeners() {
   })
 }
 
+function trashListener() {
+  let trashAnchors = document.querySelectorAll(".trash-svg");
+  trashAnchors.forEach(anchor => {
+    anchor.addEventListener("click", async (e) => {
+      e.preventDefault();
+      let idToDelete = e.target.closest("article").dataset.id;
+      console.log(idToDelete);
+      console.log(e.target.closest("article"));
+      await editBoard(idToDelete, { closed: true, starred: false });
+      await STORE.fetchBoards();
+      DOMHandler.reload();
+    })
+  });
+}
+
 const HomePage = {
   toString() {
     return render();
@@ -74,6 +91,7 @@ const HomePage = {
   addListeners() {
     logoutListener();
     asideListeners();
+    trashListener();
   },
   // state: {
   //   loginError: null,
