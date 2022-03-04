@@ -71,6 +71,7 @@ const ClosedPage = {
   addListeners() {
     asideListeners();
     logoutListener();
+    BoardsClosed.addListeners();
   },
   // state: {
   //   loginError: null,
