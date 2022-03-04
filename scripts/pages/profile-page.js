@@ -1,6 +1,6 @@
 import DOMHandler from "../dom-handler.js";
 import { logout } from "../services/sessions-service.js";
-import { updateUser } from "../services/users-service.js";
+import { deleteUser, updateUser } from "../services/users-service.js";
 import STORE from "../store.js";
 import ClosedPage from "./closed-boards-page.js";
 import HomePage from "./home-page.js";
@@ -98,8 +98,10 @@ function deleteListener() {
   const deleteButton = document.querySelector("#deleteAccButton");
   deleteButton.addEventListener("click", async (e)=>{
     e.preventDefault();
-    console.log("delete")
-    DOMHandler.reload();
+    await deleteUser();
+    sessionStorage.clear();
+    localStorage.clear();
+    DOMHandler.load(LoginPage);
   })
 }
 

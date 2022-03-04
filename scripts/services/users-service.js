@@ -27,6 +27,11 @@ export async function updateUser(
   return user;
 }
 
+export async function deleteUser() {
+  const { token, ...user } = await apiFetch(`users/${JSON.parse(localStorage.getItem("user")).id}`, { method: "DELETE"});
+  return user; 
+}
+
 //test getUser
 // const user = login({
 // 	username: "user24",
