@@ -41,6 +41,12 @@ function render() {
   ${StarredBoard}
   <h2 class="heading heading-sm">Boards</h2>
   ${RegularBoard}
+  <form class="board lime" data-color="">
+    <input class="special-input" id="toCreateBoards" placeholder="Board name" type="text">
+    <div class="board-footer">
+      <button class="special-button">CREATE</button>
+    </div>
+  </form>
 </main>
 </section>`;
 }
