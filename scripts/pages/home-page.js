@@ -114,14 +114,16 @@ function colorSelectorListener() {
 
 function createBoardListener() {
   const formToCreate = document.querySelector("#formToCC");
-  formToCreate.addEventListener("submit", (e) => {
+  formToCreate.addEventListener("submit", async (e) => {
     e.preventDefault();
     const credentials = {
       name: toCreateBoards.value,
       color: formToCC.classList[1],
     };
     console.log(credentials);
-    // createBoard();
+    await createBoard(credentials);
+    await STORE.fetchBoards();
+    DOMHandler.reload();
   })
 }
 
