@@ -1,6 +1,7 @@
 import DOMHandler from "../dom-handler.js";
 import { login } from "../services/sessions-service.js";
 import STORE from "../store.js";
+import SignupPage from "./signup-page.js";
 
 function render() {
   // const { loginError } = LoginPage.state;
@@ -35,12 +36,21 @@ function loginListener() {
   })
 }
 
+function signUpLoader() {
+  const anchor = document.querySelector("#signup");
+  anchor.addEventListener("click", async (event) => {
+    event.preventDefault();
+    DOMHandler.load(SignupPage);
+  })
+}
+
 const LoginPage = {
   toString() {
     return render();
   },
   addListeners() {
     loginListener();
+    signUpLoader();
   },
   // state: {
   //   loginError: null,
@@ -48,4 +58,3 @@ const LoginPage = {
 };
 
 export default LoginPage;
-
