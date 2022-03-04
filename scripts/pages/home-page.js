@@ -42,7 +42,7 @@ function render() {
   <h2 class="heading heading-sm">Boards</h2>
   ${RegularBoard}
   <div id="creationFormContainer" class="creation-container ds-none">
-    <form class="board lime" data-color="">
+    <form id="formToCC" class="board lime" data-color="">
       <input class="special-input" id="toCreateBoards" placeholder="Board name" type="text">
       <div class="board-footer">
         <button class="special-button">CREATE</button>
@@ -101,6 +101,17 @@ function trashListener() {
   });
 }
 
+function colorSelectorListener() {
+  const formToCC = document.querySelector("#formToCC");
+  const colors = document.querySelectorAll(".color-p");
+  colors.forEach((color) => {
+    color.addEventListener("click", (e) =>{
+      formToCC.classList.remove(`${formToCC.classList[1]}`);
+      formToCC.classList.add(`${e.target.classList[1]}`);
+    })
+  })
+}
+
 const HomePage = {
   toString() {
     return render();
@@ -109,6 +120,7 @@ const HomePage = {
     logoutListener();
     asideListeners();
     trashListener();
+    colorSelectorListener();
     RegularBoard.addListeners();
     StarredBoard.addListeners();
   },
