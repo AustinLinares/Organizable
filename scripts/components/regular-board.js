@@ -17,6 +17,9 @@ function render() {
   return `
   <section class="board-container">
     ${regularBoards.map(renderRegularBoard).join("")}
+    <article class="board-creater vertical-center h-c">
+      <p class="vertical-center">Create Bord</p>
+    </article>
   </section>
   `;
 }
