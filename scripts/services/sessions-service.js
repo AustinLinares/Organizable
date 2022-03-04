@@ -4,7 +4,7 @@ import { getUser } from "./users-service.js";
 
 export async function login(credentials = { username, password }) {
   const { token, ...user } = await apiFetch("login", { body: credentials });
-  localStorage.setItem("user", JSON.stringify(user))
+  localStorage.setItem("user", JSON.stringify(user));
   sessionStorage.setItem(tokenKey, token);
   return user;
 }

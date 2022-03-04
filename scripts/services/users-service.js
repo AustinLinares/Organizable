@@ -11,6 +11,7 @@ export async function createUser(
   newUser = { username, email, first_name, last_name, password }
 ) {
   const { token, ...user } = await apiFetch("users", { body: newUser });
+  localStorage.setItem("user", JSON.stringify(user));
   sessionStorage.setItem(tokenKey, token);
   return user;
 }
@@ -24,7 +25,6 @@ export async function updateUser(
   });
   return user;
 }
-
 
 //test getUser
 // const user = login({
