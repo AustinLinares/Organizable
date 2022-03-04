@@ -1,3 +1,4 @@
+import StarredBoard from "../components/starred-board.js";
 import DOMHandler from "../dom-handler.js";
 import { logout } from "../services/sessions-service.js";
 import ClosedPage from "./closed-boards-page.js";
@@ -34,15 +35,7 @@ function render() {
 <main class="window home-container main-padding">
   <h1 class="heading profile-heading">My Boards</h1>
   <h2 class="heading heading-sm">Starred Boards</h2>
-  <section class="board-container">
-    <article class="board lime">
-      <p>Board 1</p>
-      <div class="board-footer">
-        <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-        <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/star-active-icon.svg"></a>
-      </div>
-    </article>
-  </section>
+  ${StarredBoard}
   <h2 class="heading heading-sm">Boards</h2>
   <section class="board-container">
     <article class="board lime">
