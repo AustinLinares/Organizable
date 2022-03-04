@@ -112,6 +112,14 @@ function colorSelectorListener() {
   })
 }
 
+function createBoardListener() {
+  const formToCreate = document.querySelector("#formToCC");
+  formToCreate.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+  })
+}
+
 const HomePage = {
   toString() {
     return render();
