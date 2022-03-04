@@ -11,15 +11,15 @@ function render() {
     <img src="./assets/icons/organizable.svg" alt="logo">
   </header>
   <section class="aside-content">
-    <div class="aside-div pd-h aside-active">
+    <div class="aside-div pd-h aside-active" id="myboards-div">
       <img class="svg" src="./assets/icons/logout-icon.svg" alt="logo">
       <p>My Boards</p>
     </div>
-    <div class="aside-div pd-h">
+    <div class="aside-div pd-h" id="closedboards-div">
       <img class="svg" src="./assets/icons/closed-boards-icon.svg" alt="logo">
       <p> Closed Boards</p>
     </div>
-    <div class="aside-div pd-h">
+    <div class="aside-div pd-h" id="myprofile-div">
       <img class="svg" src="./assets/icons/profile-icon.svg" alt="logo">
       <p>My Profile</p>
     </div>
@@ -65,6 +65,17 @@ function logoutListener() {
   logoutAnchor.addEventListener("click", async ()=>{
     await logout();
     DOMHandler.load(LoginPage);
+  })
+}
+
+function asideListeners() {
+  const closedDiv = document.querySelector("#closedboards-div");
+  const profileDiv = document.querySelector("#myprofile-div");
+  closedDiv.addEventListener("click", async ()=>{
+    // DOMHandler.load(ClosedPage);
+  })
+  profileDiv.addEventListener("click", async ()=>{
+    // DOMHandler.load(ProfilePage);
   })
 }
 

@@ -96,6 +96,10 @@
   gap: 11px;
 }
 
+.aside-div:hover {
+  cursor: pointer;
+}
+
 .aside-footer {
   border-top: 1px solid #e76a94;
   height: 64px;
