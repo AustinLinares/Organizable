@@ -1,7 +1,7 @@
 import RegularBoard from "../components/regular-board.js";
 import StarredBoard from "../components/starred-board.js";
 import DOMHandler from "../dom-handler.js";
-import { editBoard } from "../services/board-service.js";
+import { createBoard, editBoard } from "../services/board-service.js";
 import { logout } from "../services/sessions-service.js";
 import STORE from "../store.js";
 import ClosedPage from "./closed-boards-page.js";
@@ -116,7 +116,12 @@ function createBoardListener() {
   const formToCreate = document.querySelector("#formToCC");
   formToCreate.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+    const credentials = {
+      name: toCreateBoards.value,
+      color: formToCC.classList[1],
+    };
+    console.log(credentials);
+    // createBoard();
   })
 }
 
@@ -129,6 +134,7 @@ const HomePage = {
     asideListeners();
     trashListener();
     colorSelectorListener();
+    createBoardListener();
     RegularBoard.addListeners();
     StarredBoard.addListeners();
   },
