@@ -1,6 +1,5 @@
 import STORE from "../store.js";
 
-
 function renderClosedBoard(closedBoard) {
   console.log(closedBoard);
   return `
@@ -32,14 +31,3 @@ const BoardsClosed = {
 };
 
 export default BoardsClosed;
-
-// `
-// <section class="board-container">
-//   <article class="board limon-bc">
-//     <p>Board 1</p>
-//     <div class="board-footer">
-//       <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
-//       <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>
-//     </div>
-//   </article>
-// </section>`
