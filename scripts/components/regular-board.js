@@ -26,6 +26,14 @@ function render() {
   `;
 }
 
+function createBoardListener() {
+  const boardCreater = document.querySelector(".board-creater");
+  const formContainer = document.querySelector("#creationFormContainer");
+  boardCreater.addEventListener("click", () => {
+    formContainer.classList.remove("ds-none");
+  })
+}
+
 function starListener() {
   let stars = document.querySelectorAll(".star-desactive");
   stars.forEach((star) => {
@@ -45,6 +53,7 @@ const RegularBoard = {
   },
   addListeners() {
     starListener();
+    createBoardListener();
   },
 };
 

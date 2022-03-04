@@ -54,6 +54,30 @@
 }
 /*  */
 
+.creation-container {
+  width: 100%;
+  gap: 16px;
+  display: flex;
+}
+
+.palette {
+  width: 190px;
+  height: 104px;
+  display: grid;
+  grid-template-columns: repeat(3, 33px);
+  gap: 8px 8px;
+}
+
+.color-p {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.color-p:hover {
+  cursor: pointer;
+}
+
 .svg {
   width: 18px;
   height: 16px;
