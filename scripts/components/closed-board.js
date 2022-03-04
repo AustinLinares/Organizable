@@ -4,7 +4,7 @@ import STORE from "../store.js";
 function renderClosedBoard(closedBoard) {
   console.log(closedBoard);
   return `
-  <article class="board lime" data-id="${closedBoard.id}" data-color="${closedBoard.color}">
+  <article class="board ${closedBoard.color}" data-id="${closedBoard.id}" data-color="${closedBoard.color}">
     <p>${closedBoard.name}</p>
     <div class="board-footer">
       <a class="board-link" href="#"><img class="board-footer__img" src="./assets/icons/recover-icon.svg"></a>
