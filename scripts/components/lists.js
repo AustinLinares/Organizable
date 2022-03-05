@@ -1,6 +1,6 @@
 import DOMHandler from "../dom-handler.js";
 import { showBoard } from "../services/board-service.js";
-import { createList } from "../services/list-service.js";
+import { createList, deleteList } from "../services/list-service.js";
 import STORE from "../store.js";
 
 function Card(card) {
@@ -31,7 +31,7 @@ function renderLists(list) {
       <h3 class="list-title">${list.name}</h3>
       <div class="list-title__links">
         <img src="./assets/icons/edit.svg">
-        <img src="./assets/icons/trash-icon.svg">
+        <img class="trash-list" src="./assets/icons/trash-icon.svg">
       </div>
     </div>
     <div class="list-content">
@@ -68,8 +68,21 @@ function listCreationListener() {
       name: inputToSend.value,
     }
     await createList(STORE.currentBoard.id, credentials);
-    STORE.currentBoard = await showBoard(STORE.currentBoard.id)
+    STORE.currentBoard = await showBoard(STORE.currentBoard.id);
+    localStorage.setItem(`${STORE.currentBoard.id}`, JSON.stringify(STORE.currentBoard));
     DOMHandler.reload();
+  })
+}
+
+function listDeleteListener() {
+  let trashListAnchors = document.querySelectorAll(".trash-list");
+  trashListAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", async (e) => {
+      await deleteList(STORE.currentBoard.id , e.target.closest("article").dataset.id);
+      STORE.currentBoard = await showBoard(STORE.currentBoard.id);
+      localStorage.setItem(`${STORE.currentBoard.id}`, JSON.stringify(STORE.currentBoard));
+      DOMHandler.reload();
+    })
   })
 }
 
@@ -79,6 +92,7 @@ const ListsComponent = {
   },
   addListeners() {
     listCreationListener();
+    listDeleteListener();
   },
 };
 

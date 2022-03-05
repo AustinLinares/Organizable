@@ -115,7 +115,8 @@
 }
 
 #logout-img:hover,
-.logo-list-page:hover {
+.logo-list-page:hover,
+.trash-list:hover {
   cursor: pointer;
 }
 
