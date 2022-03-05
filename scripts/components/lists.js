@@ -1,3 +1,6 @@
+import DOMHandler from "../dom-handler.js";
+import { showBoard } from "../services/board-service.js";
+import { createList } from "../services/list-service.js";
 import STORE from "../store.js";
 
 function Card(card) {
@@ -60,11 +63,13 @@ function render() {
 function listCreationListener() {
   const buttonCreator = document.querySelector(".new-list-button");
   let inputToSend = document.querySelector(".input-list__maker"); 
-  buttonCreator.addEventListener("click", (e) => {
+  buttonCreator.addEventListener("click", async (e) => {
     const credentials = {
       name: inputToSend.value,
     }
-    console.log(credentials);
+    await createList(STORE.currentBoard.id, credentials);
+    STORE.currentBoard = await showBoard(STORE.currentBoard.id)
+    DOMHandler.reload();
   })
 }
 
