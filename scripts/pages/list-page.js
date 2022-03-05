@@ -1,8 +1,11 @@
+import DOMHandler from "../dom-handler.js";
+import HomePage from "./home-page.js";
+
 function render() {
   // const { loginError } = LoginPage.state;
   return `
-  <header class="lists-header">
-  <img src="./assets/icons/organizable.svg">
+<header class="lists-header">
+  <img class="logo-list-page" src="./assets/icons/organizable.svg">
 </header>
 <main class="list-main lime">
   <h1 class="list-heading">Organizable</h1>
@@ -75,12 +78,19 @@ function render() {
 </main>`;
 }
 
+function logoListener() {
+  const logo = document.querySelector(".logo-list-page");
+  logo.addEventListener("click", () => {
+    DOMHandler.load(HomePage);
+  })
+}
 
 const ListPage = {
   toString() {
     return render();
   },
   addListeners() {
+    logoListener();
   },
   // state: {
   //   loginError: null,
