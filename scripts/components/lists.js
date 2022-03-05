@@ -1,6 +1,7 @@
-
+import STORE from "../store.js";
 
 function renderLists(list) {
+  console.log(list);
   return `
   <article class="list">
     <div class="list-header">
@@ -37,10 +38,10 @@ function renderLists(list) {
 }
 
 function render() {
-  let regularBoards = JSON.parse(localStorage.getItem("regular")) || STORE.currentBoard.lists;
+  let lists = STORE.currentBoard.lists;
   return `
   <section class="lists-container">
-    ${regularBoards.map(renderLists).join("")}
+    ${lists.map(renderLists).join("")}
     <div class="form-list__container">
       <form class="form-list__maker">
         <input class="input-list__maker list-name" type="text" placeholder="new list">
@@ -88,7 +89,7 @@ function render() {
 
 
 
-const RegularBoard = {
+const ListsComponent = {
   toString() {
     return render();
   },
@@ -97,4 +98,4 @@ const RegularBoard = {
   },
 };
 
-export default RegularBoard;
+export default ListsComponent;
