@@ -147,8 +147,15 @@ function listPageListener() {
     board.addEventListener("click", async (event) => {
       if (event.target.tagName == "A" || event.target.tagName == "IMG") return;
       let idToGet = event.target.closest("article").dataset.id;
-      let chosenBoard = await showBoard(idToGet) ;
-      console.log(chosenBoard);
+      let chosenBoard = await showBoard(idToGet); 
+      if (localStorage.getItem(`${idToGet}`)) {
+        // DOMHandler.load(ListPage());
+        console.log(JSON.parse(localStorage.getItem(`${idToGet}`)));
+      } else {
+        localStorage.setItem(`${idToGet}`, JSON.stringify(chosenBoard));
+      }
+      STORE.currentBoard= chosenBoard;
+      console.log(STORE.currentBoard);
       // DOMHandler.load(ListPage);
     })
   })

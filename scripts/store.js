@@ -34,7 +34,7 @@ const STORE = {
   starred: [],
   regular: [],
   closed: [],
-  currentTab: "expense",
+  currentBoard: null,
   fetchBoards,
   // currentCategories,
   // deleteCategory,
