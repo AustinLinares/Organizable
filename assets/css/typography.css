@@ -29,3 +29,20 @@
   letter-spacing: 1.5px;
   margin-bottom: 4px;
 }
+
+.list-heading {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+
+.list-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}

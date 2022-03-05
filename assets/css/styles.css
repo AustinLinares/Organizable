@@ -2,6 +2,7 @@
 @import url("./typography.css");
 @import url("./utils.css");
 @import url("./main.css");
+@import url("./lists.css");
 
 * {
   margin: 0;
