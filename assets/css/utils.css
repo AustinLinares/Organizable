@@ -134,7 +134,9 @@
 }
 
 .board-creater:hover,
-.edit-list:hover {
+.edit-list:hover,
+.escape-edit:hover,
+.send-edits:hover {
   cursor: pointer;
 }
 

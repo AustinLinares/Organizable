@@ -39,8 +39,8 @@ function renderLists(list) {
       <form class="list-edit-form ds-none">
         <input class="list-edit-name" type="text" placeholder="Editing mode">
         <div class="list-edit-links">
-          <img class="" src="../../assets/icons/check.svg">
-          <img class="" src="../../assets/icons/escape-list.svg">
+          <img class="send-edits" src="../../assets/icons/check.svg">
+          <img class="escape-edit" src="../../assets/icons/escape-list.svg">
         </div>
       </form>
     </div>
@@ -124,16 +124,27 @@ function cardDeleteListener() {
   })
 }
 
-function listEditListener() {
+function openListEditListener() {
   let editListAnchors = document.querySelectorAll(".edit-list");
-  let editForm = document.querySelector(".list-edit-form");
   editListAnchors.forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
-      e.target.closest(".list-header").classList.toggle("ds-none");
-      editForm.classList.toggle("ds-none");
+      let listToEdit = e.target.closest("article");
+      listToEdit.querySelector(".list-edit-form").classList.toggle("ds-none");
+      e.target.closest(".displayed-header").classList.toggle("ds-none");
     })
   })
 }
+
+function closeListEditListener() {
+  let closeEditListAnchors = document.querySelectorAll(".escape-edit");
+  closeEditListAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      DOMHandler.reload();
+    })
+  })
+}
+
+
 
 const ListsComponent = {
   toString() {
@@ -144,7 +155,8 @@ const ListsComponent = {
     listDeleteListener();
     cardCreationListener();
     cardDeleteListener();
-    listEditListener();
+    openListEditListener();
+    closeListEditListener();
   },
 };
 
