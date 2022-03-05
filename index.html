@@ -10,38 +10,72 @@
 <body>
   <div id="root">
     <!-- <section class="list-page__container"> -->
-      <header class="lists-header">
+    <header class="lists-header">
       <img src="./assets/icons/organizable.svg">
     </header>
     <main class="list-main lime">
       <h1 class="list-heading">Organizable</h1>
-      <article class="list">
-        <div class="list-header">
-          <h3 class="list-title">To Do</h3>
-          <div class="list-title__links">
-            <img src="./assets/icons/edit.svg">
-            <img src="./assets/icons/trash-icon.svg">
+      <section class="lists-container">
+        <article class="list">
+          <div class="list-header">
+            <h3 class="list-title">To Do</h3>
+            <div class="list-title__links">
+              <img src="./assets/icons/edit.svg">
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
           </div>
-        </div>
-        <div class="list-content">
-          <div class="card">
-            <p>Add animations</p>
-            <img src="./assets/icons/trash-icon.svg">
+          <div class="list-content">
+            <div class="card">
+              <p>Add animations</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
+            <div class="card">
+              <p>Add animations</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
+            <div class="card">
+              <p>Refactor functions</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
+            <div class="card">
+              <p>Improve a11y</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
           </div>
-          <div class="card">
-            <p>Refactor functions</p>
-            <img src="./assets/icons/trash-icon.svg">
+          <form class="card-form">
+            <input id="card-name" class="card-name" type="text" placeholder="new card">
+            <img src="./assets/icons/plus.svg">
+          </form>
+        </article>
+        <article class="list">
+          <div class="list-header">
+            <h3 class="list-title">To Do</h3>
+            <div class="list-title__links">
+              <img src="./assets/icons/edit.svg">
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
           </div>
-          <div class="card">
-            <p>Improve a11y</p>
-            <img src="./assets/icons/trash-icon.svg">
+          <div class="list-content">
+            <div class="card">
+              <p>Add animations</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
+            <div class="card">
+              <p>Refactor functions</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
+            <div class="card">
+              <p>Improve a11y</p>
+              <img src="./assets/icons/trash-icon.svg">
+            </div>
           </div>
-        </div>
-        <form class="card-form">
-          <input id="card-name" class="card-name" type="text" placeholder="new card">
-          <img src="./assets/icons/plus.svg">
-        </form>
-      </article>
+          <form class="card-form">
+            <input id="card-name" class="card-name" type="text" placeholder="new card">
+            <img src="./assets/icons/plus.svg">
+          </form>
+        </article>
+        
+      </section>
     </main>
     <!-- </section> -->
   </div>
