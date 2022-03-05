@@ -159,7 +159,7 @@
 }
 
 .ds-none {
-  display: none;
+  display: none !important;
 }
 
 .hide-container {

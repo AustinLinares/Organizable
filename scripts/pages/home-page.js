@@ -116,6 +116,7 @@ function colorSelectorListener() {
 }
 
 function createBoardListener() {
+  const formContainer = document.querySelector(".hide-container");
   const formToCreate = document.querySelector("#formToCC");
   formToCreate.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -126,7 +127,16 @@ function createBoardListener() {
     console.log(credentials);
     await createBoard(credentials);
     await STORE.fetchBoards();
+    formContainer.classList.toggle("ds-none");
     DOMHandler.reload();
+  })
+}
+
+function closeForm() {
+  const esc = document.querySelector(".escape");
+  const formContainer = document.querySelector(".hide-container");
+  esc.addEventListener("click", () => {
+    formContainer.classList.toggle("ds-none");
   })
 }
 
@@ -140,6 +150,7 @@ const HomePage = {
     trashListener();
     colorSelectorListener();
     createBoardListener();
+    closeForm();
     RegularBoard.addListeners();
     StarredBoard.addListeners();
   },
