@@ -1,8 +1,17 @@
 import DOMHandler from "../dom-handler.js";
+import STORE from "../store.js";
 import HomePage from "./home-page.js";
+import { idToGet } from "./home-page.js";
 
 function render() {
   // const { loginError } = LoginPage.state;
+  let listToRender;
+  if (localStorage.getItem(`${idToGet}`)) {
+    listToRender = JSON.parse(localStorage.getItem(`${idToGet}`));
+  } else {
+    listToRender = STORE.currentBoard;
+  }
+  console.log(listToRender);
   return `
 <header class="lists-header">
   <img class="logo-list-page" src="./assets/icons/organizable.svg">

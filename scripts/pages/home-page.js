@@ -141,22 +141,20 @@ function closeForm() {
   })
 }
 
+let idToGet;
 function listPageListener() {
   let boards = document.querySelectorAll(".board-list");
   boards.forEach((board) => {
     board.addEventListener("click", async (event) => {
       if (event.target.tagName == "A" || event.target.tagName == "IMG") return;
-      let idToGet = event.target.closest("article").dataset.id;
-      let chosenBoard = await showBoard(idToGet); 
-      if (localStorage.getItem(`${idToGet}`)) {
-        // DOMHandler.load(ListPage());
-        console.log(JSON.parse(localStorage.getItem(`${idToGet}`)));
-      } else {
+      idToGet = event.target.closest("article").dataset.id;
+      let chosenBoard;
+      if (!(localStorage.getItem(`${idToGet}`))) {
+        chosenBoard = await showBoard(idToGet); 
         localStorage.setItem(`${idToGet}`, JSON.stringify(chosenBoard));
       }
       STORE.currentBoard= chosenBoard;
-      console.log(STORE.currentBoard);
-      // DOMHandler.load(ListPage);
+      DOMHandler.load(ListPage);
     })
   })
 }
@@ -183,3 +181,4 @@ const HomePage = {
 
 export default HomePage;
 
+export { idToGet };
