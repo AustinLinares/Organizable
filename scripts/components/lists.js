@@ -1,5 +1,25 @@
 import STORE from "../store.js";
 
+function Card(card) {
+  console.log(card);
+  return `
+  <div class="card" data-id="${card.cardId}">
+    <p>${card.name}</p>
+    <img src="./assets/icons/trash-icon.svg">
+  </div>
+`;
+}
+
+function renderCards(chosenList) {
+  let cards = chosenList.cards;
+  return `
+  <div class="list-content">
+    ${cards.map(Card).join("")}
+
+  </div>
+  `;
+}
+
 function renderLists(list) {
   console.log(list);
   return `
@@ -12,22 +32,7 @@ function renderLists(list) {
       </div>
     </div>
     <div class="list-content">
-      <div class="card">
-        <p>Add animations</p>
-        <img src="./assets/icons/trash-icon.svg">
-      </div>
-      <div class="card">
-        <p>Add animations</p>
-        <img src="./assets/icons/trash-icon.svg">
-      </div>
-      <div class="card">
-        <p>Refactor functions</p>
-        <img src="./assets/icons/trash-icon.svg">
-      </div>
-      <div class="card">
-        <p>Improve a11y</p>
-        <img src="./assets/icons/trash-icon.svg">
-      </div>
+      ${renderCards(list)}
     </div>
     <form class="card-form">
       <input class="card-name" type="text" placeholder="new card">
@@ -51,9 +56,6 @@ function render() {
   </section>
   `;
 }
-
-
-
 
 
 const ListsComponent = {
