@@ -61,14 +61,16 @@
   padding: 4px;
 }
 
-.card-form {
+.card-form,
+.list-edit-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .card-name,
-.list-name {
+.list-name,
+.list-edit-name {
   background: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 8px;
@@ -101,4 +103,8 @@
 
 .new-list-button {
   padding-left: 6px;
+}
+
+.list-edit-links {
+  display: flex;
 }

@@ -42,6 +42,13 @@ function renderLists(list) {
       <input class="card-name" type="text" placeholder="new card">
       <img class="new-card-button" src="./assets/icons/plus.svg">
     </form>
+    <form class="list-edit-form">
+      <input class="list-edit-name" type="text" placeholder="Editing mode">
+      <div class="list-edit-links">
+        <img class="" src="../../assets/icons/check.svg">
+        <img class="" src="../../assets/icons/escape-list.svg">
+      </div>
+    </form>
   </article>
 `;
 }
