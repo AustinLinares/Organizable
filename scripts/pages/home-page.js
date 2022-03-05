@@ -5,6 +5,7 @@ import { createBoard, editBoard } from "../services/board-service.js";
 import { logout } from "../services/sessions-service.js";
 import STORE from "../store.js";
 import ClosedPage from "./closed-boards-page.js";
+import ListPage from "./list-page.js";
 import LoginPage from "./login-page.js";
 import ProfilePage from "./profile-page.js";
 
@@ -140,6 +141,17 @@ function closeForm() {
   })
 }
 
+function listPageListener() {
+  let boards = document.querySelectorAll(".board");
+  boards.forEach((board) => {
+    board.addEventListener("click", (event) => {
+      if (event.target.tagName == "A" || event.target.tagName == "IMG") return;
+      console.log("pokemon");
+      DOMHandler.load(ListPage);
+    })
+  })
+}
+
 const HomePage = {
   toString() {
     return render();
@@ -151,6 +163,7 @@ const HomePage = {
     colorSelectorListener();
     createBoardListener();
     closeForm();
+    listPageListener();
     RegularBoard.addListeners();
     StarredBoard.addListeners();
   },
