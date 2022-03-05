@@ -142,7 +142,7 @@ function closeForm() {
 }
 
 function listPageListener() {
-  let boards = document.querySelectorAll(".board");
+  let boards = document.querySelectorAll(".board-list");
   boards.forEach((board) => {
     board.addEventListener("click", (event) => {
       if (event.target.tagName == "A" || event.target.tagName == "IMG") return;

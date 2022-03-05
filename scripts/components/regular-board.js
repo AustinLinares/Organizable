@@ -4,7 +4,7 @@ import STORE from "../store.js";
 
 function renderRegularBoard(regularBoard) {
   return `
-  <article class="board ${regularBoard.color}" data-id="${regularBoard.id}" data-color="${regularBoard.color}">
+  <article class="board bord-list ${regularBoard.color}" data-id="${regularBoard.id}" data-color="${regularBoard.color}">
     <p>${regularBoard.name}</p>
     <div class="board-footer">
       <a class="board-link trash-svg" href="#"><img class="board-footer__img" src="./assets/icons/trash-icon.svg"></a>

@@ -8,7 +8,7 @@
   padding: 8px;
 }
 
-.board:hover {
+.board-list:hover {
   cursor: pointer;
 }
 
