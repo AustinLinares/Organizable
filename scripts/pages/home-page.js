@@ -1,7 +1,7 @@
 import RegularBoard from "../components/regular-board.js";
 import StarredBoard from "../components/starred-board.js";
 import DOMHandler from "../dom-handler.js";
-import { createBoard, editBoard } from "../services/board-service.js";
+import { createBoard, editBoard, showBoard } from "../services/board-service.js";
 import { logout } from "../services/sessions-service.js";
 import STORE from "../store.js";
 import ClosedPage from "./closed-boards-page.js";
@@ -144,10 +144,12 @@ function closeForm() {
 function listPageListener() {
   let boards = document.querySelectorAll(".board-list");
   boards.forEach((board) => {
-    board.addEventListener("click", (event) => {
+    board.addEventListener("click", async (event) => {
       if (event.target.tagName == "A" || event.target.tagName == "IMG") return;
-      console.log("pokemon");
-      DOMHandler.load(ListPage);
+      let idToGet = event.target.closest("article").dataset.id;
+      let chosenBoard = await showBoard(idToGet) ;
+      console.log(chosenBoard);
+      // DOMHandler.load(ListPage);
     })
   })
 }
