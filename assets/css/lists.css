@@ -90,10 +90,15 @@
   display: flex;
   align-items: center;
   /* justify-content: center; */
+  padding: 8px;
 }
 
 .form-list__maker {
   display: flex;
-  align-items: center;
+  align-items: space-between;
   justify-content: space-between;
+}
+
+.new-list-button {
+  padding-left: 6px;
 }
