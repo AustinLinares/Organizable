@@ -1,23 +1,18 @@
 import DOMHandler from "../dom-handler.js";
 import STORE from "../store.js";
 import HomePage from "./home-page.js";
-import { idToGet } from "./home-page.js";
+
 
 function render() {
   // const { loginError } = LoginPage.state;
-  let listToRender;
-  if (localStorage.getItem(`${idToGet}`)) {
-    listToRender = JSON.parse(localStorage.getItem(`${idToGet}`));
-  } else {
-    listToRender = STORE.currentBoard;
-  }
+  let listToRender = STORE.currentBoard;
   console.log(listToRender);
   return `
 <header class="lists-header">
   <img class="logo-list-page" src="./assets/icons/organizable.svg">
 </header>
-<main class="list-main lime">
-  <h1 class="list-heading">Organizable</h1>
+<main class="list-main ${listToRender.color}">
+  <h1 class="list-heading">${listToRender.name}</h1>
   <section class="lists-container">
     <article class="list">
       <div class="list-header">

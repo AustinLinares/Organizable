@@ -141,19 +141,20 @@ function closeForm() {
   })
 }
 
-let idToGet;
 function listPageListener() {
   let boards = document.querySelectorAll(".board-list");
   boards.forEach((board) => {
     board.addEventListener("click", async (event) => {
       if (event.target.tagName == "A" || event.target.tagName == "IMG") return;
-      idToGet = event.target.closest("article").dataset.id;
+      let idToGet = event.target.closest("article").dataset.id;
       let chosenBoard;
       if (!(localStorage.getItem(`${idToGet}`))) {
         chosenBoard = await showBoard(idToGet); 
         localStorage.setItem(`${idToGet}`, JSON.stringify(chosenBoard));
+        STORE.currentBoard= chosenBoard;
+      } else {
+        STORE.currentBoard= JSON.parse((localStorage.getItem(`${idToGet}`)));
       }
-      STORE.currentBoard= chosenBoard;
       DOMHandler.load(ListPage);
     })
   })
@@ -181,4 +182,3 @@ const HomePage = {
 
 export default HomePage;
 
-export { idToGet };
