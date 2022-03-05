@@ -117,6 +117,7 @@
 #logout-img:hover,
 .logo-list-page:hover,
 .trash-list:hover,
+.trash-card:hover,
 .new-card-button:hover {
   cursor: pointer;
 }

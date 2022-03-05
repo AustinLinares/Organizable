@@ -1,6 +1,6 @@
 import DOMHandler from "../dom-handler.js";
 import { showBoard } from "../services/board-service.js";
-import { createCard } from "../services/card-service.js";
+import { createCard, deleteCard } from "../services/card-service.js";
 import { createList, deleteList } from "../services/list-service.js";
 import STORE from "../store.js";
 
@@ -9,7 +9,7 @@ function Card(card) {
   return `
   <div class="card" data-id="${card.cardId}">
     <p>${card.name}</p>
-    <img src="./assets/icons/trash-icon.svg">
+    <img class="trash-card" src="./assets/icons/trash-icon.svg">
   </div>
 `;
 }
@@ -103,6 +103,18 @@ function cardCreationListener() {
   })
 }
 
+function cardDeleteListener() {
+  let trashCardAnchors = document.querySelectorAll(".trash-card");
+  trashCardAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", async (e) => {
+      await deleteCard(e.target.closest("article").dataset.id, e.target.closest(".card").dataset.id);
+      STORE.currentBoard = await showBoard(STORE.currentBoard.id);
+      localStorage.setItem(`${STORE.currentBoard.id}`, JSON.stringify(STORE.currentBoard));
+      DOMHandler.reload();
+    })
+  })
+}
+
 const ListsComponent = {
   toString() {
     return render();
@@ -111,6 +123,7 @@ const ListsComponent = {
     listCreationListener();
     listDeleteListener();
     cardCreationListener();
+    cardDeleteListener();
   },
 };
 
