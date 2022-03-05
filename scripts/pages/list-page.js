@@ -31,6 +31,7 @@ const ListPage = {
   },
   addListeners() {
     logoListener();
+    ListsComponent.addListeners();
   },
   // state: {
   //   loginError: null,

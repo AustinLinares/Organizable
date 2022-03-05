@@ -97,7 +97,8 @@
   gap: 11px;
 }
 
-.aside-div:hover {
+.aside-div:hover,
+.new-list-button:hover {
   cursor: pointer;
 }
 

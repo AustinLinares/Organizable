@@ -1,7 +1,7 @@
 import STORE from "../store.js";
 
 function Card(card) {
-  console.log(card);
+  // console.log(card);
   return `
   <div class="card" data-id="${card.cardId}">
     <p>${card.name}</p>
@@ -21,7 +21,7 @@ function renderCards(chosenList) {
 }
 
 function renderLists(list) {
-  console.log(list);
+  // console.log(list);
   return `
   <article class="list" data-id="${list.listId}">
     <div class="list-header">
@@ -57,13 +57,23 @@ function render() {
   `;
 }
 
+function listCreationListener() {
+  const buttonCreator = document.querySelector(".new-list-button");
+  let inputToSend = document.querySelector(".input-list__maker"); 
+  buttonCreator.addEventListener("click", (e) => {
+    const credentials = {
+      name: inputToSend.value,
+    }
+    console.log(credentials);
+  })
+}
 
 const ListsComponent = {
   toString() {
     return render();
   },
   addListeners() {
-
+    listCreationListener();
   },
 };
 
