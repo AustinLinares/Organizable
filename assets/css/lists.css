@@ -1,6 +1,11 @@
+/* .list-page__container {
+  display: grid;
+  grid-template-rows: 48px calc(100vh - 48px);
+} */
+
 .list-main {
   padding: 32px;
-  /* min-height: 92.2vh; */
+  min-height: calc(100vh - 48px);
 }
 
 .list {
