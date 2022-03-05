@@ -58,14 +58,22 @@
   width: 100%;
   gap: 16px;
   display: flex;
+  justify-content: center;
 }
 
 .palette {
-  width: 190px;
-  height: 104px;
+  width: 120px;
+  height: 120px;
   display: grid;
   grid-template-columns: repeat(3, 33px);
   gap: 8px 8px;
+  position: relative;
+}
+
+.escape {
+  position: absolute;
+  top: -30px;
+  right: -20px;
 }
 
 .color-p {

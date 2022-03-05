@@ -60,6 +60,7 @@ function render() {
         <div class="color-p green"></div>
         <div class="color-p grey"></div>
         <div class="color-p sky"></div>
+        <img class="escape" src="../../assets/icons/x.svg">
       </section>
     </div>
   </div>
