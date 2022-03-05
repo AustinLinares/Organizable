@@ -29,11 +29,20 @@ function renderLists(list) {
   return `
   <article class="list" data-id="${list.listId}">
     <div class="list-header">
-      <h3 class="list-title">${list.name}</h3>
-      <div class="list-title__links">
-        <img src="./assets/icons/edit.svg">
-        <img class="trash-list" src="./assets/icons/trash-icon.svg">
+      <div class="displayed-header">
+        <h3 class="list-title">${list.name}</h3>
+        <div class="list-title__links">
+          <img class="edit-list" src="./assets/icons/edit.svg">
+          <img class="trash-list" src="./assets/icons/trash-icon.svg">
+        </div>
       </div>
+      <form class="list-edit-form ds-none">
+        <input class="list-edit-name" type="text" placeholder="Editing mode">
+        <div class="list-edit-links">
+          <img class="" src="../../assets/icons/check.svg">
+          <img class="" src="../../assets/icons/escape-list.svg">
+        </div>
+      </form>
     </div>
     <div class="list-content">
       ${renderCards(list)}
@@ -41,13 +50,6 @@ function renderLists(list) {
     <form class="card-form">
       <input class="card-name" type="text" placeholder="new card">
       <img class="new-card-button" src="./assets/icons/plus.svg">
-    </form>
-    <form class="list-edit-form">
-      <input class="list-edit-name" type="text" placeholder="Editing mode">
-      <div class="list-edit-links">
-        <img class="" src="../../assets/icons/check.svg">
-        <img class="" src="../../assets/icons/escape-list.svg">
-      </div>
     </form>
   </article>
 `;
@@ -122,6 +124,17 @@ function cardDeleteListener() {
   })
 }
 
+function listEditListener() {
+  let editListAnchors = document.querySelectorAll(".edit-list");
+  let editForm = document.querySelector(".list-edit-form");
+  editListAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.target.closest(".list-header").classList.toggle("ds-none");
+      editForm.classList.toggle("ds-none");
+    })
+  })
+}
+
 const ListsComponent = {
   toString() {
     return render();
@@ -131,6 +144,7 @@ const ListsComponent = {
     listDeleteListener();
     cardCreationListener();
     cardDeleteListener();
+    listEditListener();
   },
 };
 
