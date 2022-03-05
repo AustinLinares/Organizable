@@ -1,5 +1,6 @@
 import DOMHandler from "../dom-handler.js";
 import { showBoard } from "../services/board-service.js";
+import { createCard } from "../services/card-service.js";
 import { createList, deleteList } from "../services/list-service.js";
 import STORE from "../store.js";
 
@@ -39,7 +40,7 @@ function renderLists(list) {
     </div>
     <form class="card-form">
       <input class="card-name" type="text" placeholder="new card">
-      <img src="./assets/icons/plus.svg">
+      <img class="new-card-button" src="./assets/icons/plus.svg">
     </form>
   </article>
 `;
@@ -86,6 +87,22 @@ function listDeleteListener() {
   })
 }
 
+function cardCreationListener() {
+  let buttonCreators = document.querySelectorAll(".new-card-button");
+  buttonCreators.forEach((button) => {
+    button.addEventListener("click", async (e) => {
+      let listParent= e.target.closest("article");
+      const credentials = {
+        name: listParent.querySelector("input").value,
+      }
+      await createCard(listParent.dataset.id, credentials);
+      STORE.currentBoard = await showBoard(STORE.currentBoard.id);
+      localStorage.setItem(`${STORE.currentBoard.id}`, JSON.stringify(STORE.currentBoard));
+      DOMHandler.reload();
+    })
+  })
+}
+
 const ListsComponent = {
   toString() {
     return render();
@@ -93,6 +110,7 @@ const ListsComponent = {
   addListeners() {
     listCreationListener();
     listDeleteListener();
+    cardCreationListener();
   },
 };
 
