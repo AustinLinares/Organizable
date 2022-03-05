@@ -67,7 +67,8 @@
   align-items: center;
 }
 
-.card-name {
+.card-name,
+.list-name {
   background: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 8px;
@@ -76,6 +77,23 @@
   width: 226px;
 }
 
-.card-name:focus {
+.card-name:focus,
+.list-name:focus {
   outline: none;
+}
+
+.form-list__container {
+  width: 280px;
+  height: 48px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.form-list__maker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
