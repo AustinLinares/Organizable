@@ -86,7 +86,8 @@
 }
 
 .card-name:focus,
-.list-name:focus {
+.list-name:focus,
+.list-edit-name {
   outline: none;
 }
 

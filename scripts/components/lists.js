@@ -1,7 +1,7 @@
 import DOMHandler from "../dom-handler.js";
 import { showBoard } from "../services/board-service.js";
 import { createCard, deleteCard } from "../services/card-service.js";
-import { createList, deleteList } from "../services/list-service.js";
+import { createList, deleteList, editList } from "../services/list-service.js";
 import STORE from "../store.js";
 
 function Card(card) {
@@ -144,7 +144,23 @@ function closeListEditListener() {
   })
 }
 
-
+function sendEditListener() {
+  let sendEditListAnchors = document.querySelectorAll(".send-edits");
+  sendEditListAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", async (e) => {
+      let listToSendEdit= e.target.closest("article");
+      const credentials = {
+        name: listToSendEdit.querySelector(".list-edit-name").value,
+      }
+      console.log(STORE.currentBoard.id);
+      console.log(listToSendEdit.dataset.id);
+      await editList(STORE.currentBoard.id, listToSendEdit.dataset.id, credentials);
+      STORE.currentBoard = await showBoard(STORE.currentBoard.id);
+      localStorage.setItem(`${STORE.currentBoard.id}`, JSON.stringify(STORE.currentBoard));
+      DOMHandler.reload();
+    })
+  })
+}
 
 const ListsComponent = {
   toString() {
@@ -157,6 +173,7 @@ const ListsComponent = {
     cardDeleteListener();
     openListEditListener();
     closeListEditListener();
+    sendEditListener();
   },
 };
 
