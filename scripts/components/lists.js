@@ -102,7 +102,7 @@ function cardCreationListener() {
     button.addEventListener("click", async (e) => {
       let listParent= e.target.closest("article");
       const credentials = {
-        name: listParent.querySelector("input").value,
+        name: listParent.querySelector(".card-name").value,
       }
       await createCard(listParent.dataset.id, credentials);
       STORE.currentBoard = await showBoard(STORE.currentBoard.id);
